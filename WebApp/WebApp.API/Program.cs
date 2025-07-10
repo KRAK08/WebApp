@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRouting(r => r.LowercaseUrls = true);
 builder.Services.AddDbContext<DataContext>(d => d.UseSqlServer(builder.Configuration.GetConnectionString("dbConn")));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
