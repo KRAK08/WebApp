@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using WebApp.API.Data;
+using WebApp.API.Repositories.Implementations;
+using WebApp.API.Repositories.Interfaces;
+using WebApp.API.UnitsOfWork.Implementations;
+using WebApp.API.UnitsOfWork.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +15,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRouting(r => r.LowercaseUrls = true);
 builder.Services.AddDbContext<DataContext>(d => d.UseSqlServer(builder.Configuration.GetConnectionString("dbConn")));
+
+builder.Services.AddScoped(typeof(IGeneric<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWork<>));
+builder.Services.AddScoped<IProductUnitOfWork, ProductUnitOfWork>();
 
 var app = builder.Build();
 
