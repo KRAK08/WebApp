@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using WebApp.API.Data;
 using WebApp.API.Repositories.Implementations;
 using WebApp.API.Repositories.Interfaces;
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(opt => opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -18,8 +19,12 @@ builder.Services.AddDbContext<DataContext>(d => d.UseSqlServer(builder.Configura
 
 builder.Services.AddScoped(typeof(IGeneric<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWork<>));
 builder.Services.AddScoped<IProductUnitOfWork, ProductUnitOfWork>();
+builder.Services.AddScoped<IBrandUnitOfWork, BrandUnitOfWork>();
+builder.Services.AddScoped<ICategoryUnitOfWork, CategoryUnitOfWork>();
 
 var app = builder.Build();
 
