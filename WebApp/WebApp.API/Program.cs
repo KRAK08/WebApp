@@ -21,11 +21,14 @@ builder.Services.AddScoped(typeof(IGeneric<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWork<>));
 builder.Services.AddScoped<IProductUnitOfWork, ProductUnitOfWork>();
 builder.Services.AddScoped<IBrandUnitOfWork, BrandUnitOfWork>();
 builder.Services.AddScoped<ICategoryUnitOfWork, CategoryUnitOfWork>();
-
+builder.Services.AddScoped<IUserUnitOfWork, UserUnitOfWork>();
+builder.Services.AddScoped<IRoleUnitOfWork, RoleUnitOfwork>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
