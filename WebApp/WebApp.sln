@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.API", "WebApp.API\WebApp.API.csproj", "{44B90EF1-44C8-4D81-B6A4-E1605B328574}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Shared", "WebApp.Shared\WebApp.Shared.csproj", "{396E7077-9BA8-41AC-BFCD-83BCAF31B92C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanel", "AdminPanel\AdminPanel.csproj", "{2E02EAF9-0331-43D5-92DB-1FE40E88A430}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{396E7077-9BA8-41AC-BFCD-83BCAF31B92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{396E7077-9BA8-41AC-BFCD-83BCAF31B92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{396E7077-9BA8-41AC-BFCD-83BCAF31B92C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E02EAF9-0331-43D5-92DB-1FE40E88A430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E02EAF9-0331-43D5-92DB-1FE40E88A430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E02EAF9-0331-43D5-92DB-1FE40E88A430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E02EAF9-0331-43D5-92DB-1FE40E88A430}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A302655A-26E8-4CF7-9487-102A879EE0ED}
 	EndGlobalSection
 EndGlobal
